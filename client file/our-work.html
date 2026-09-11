@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Work | Elite Bridal Studio — Ooty</title>
+<meta name="description" content="See real bridal transformations and video reviews from Elite Bridal Studio — Ooty's trusted makeup, saree draping, and hair treatment studio.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Mulish:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --maroon:#7A1636;--maroon-dark:#4A0E21;--plum:#241019;--gold:#C7972E;
+    --gold-light:#E7C978;--cream:#FBF3E9;--ivory:#FFFCF8;--rose:#E9C9C9;
+    --ink:#2E1B22;--muted:#7A6A6E;--radius-card:10px;--radius-pill:999px;
+    --shadow:0 18px 40px -20px rgba(42,15,28,.35);--maxw:1200px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--ivory);color:var(--ink);font-family:'Mulish',sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;}
+  h1,h2,h3,h4{font-family:'Cormorant Garamond',serif;font-weight:600;margin:0;color:var(--plum);}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  ul{margin:0;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+  button{font-family:inherit;cursor:pointer;background:none;border:none;}
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+
+  /* HEADER */
+  header{position:fixed;top:0;left:0;right:0;z-index:200;padding:20px 0;transition:background .3s ease,padding .3s ease,box-shadow .3s ease;}
+  header.scrolled{background:rgba(255,252,248,.97);backdrop-filter:blur(8px);box-shadow:0 6px 24px -14px rgba(42,15,28,.3);padding:12px 0;}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;}
+  .logo{display:flex;align-items:center;gap:10px;}
+  .logo-mark{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(150deg,var(--maroon),var(--maroon-dark));border:1px solid var(--gold-light);flex-shrink:0;}
+  .logo-mark svg{width:22px;height:22px;}
+  .logo-text .lg1{font-family:'Cormorant Garamond',serif;font-size:23px;font-weight:700;color:var(--plum);}
+  .logo-text .lg2{font-size:10px;letter-spacing:3px;color:var(--gold);font-weight:700;display:block;margin-top:2px;}
+  nav.main-links{display:flex;align-items:center;gap:32px;}
+  nav.main-links > a{font-size:14.5px;font-weight:600;color:var(--plum);position:relative;padding:4px 0;}
+  nav.main-links > a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:1.5px;background:var(--gold);transition:width .3s ease;}
+  nav.main-links > a:hover::after{width:100%;}
+  .header-actions{display:flex;align-items:center;gap:16px;}
+  .phone-pill{display:flex;align-items:center;gap:8px;font-size:13.5px;font-weight:700;color:var(--maroon-dark);}
+  .phone-pill svg{width:16px;height:16px;flex-shrink:0;}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 26px;border-radius:var(--radius-pill);font-size:13.5px;font-weight:700;letter-spacing:.2px;border:1px solid transparent;transition:transform .25s ease,box-shadow .25s ease,background .25s ease,color .25s ease;white-space:nowrap;}
+  .btn-gold{background:linear-gradient(120deg,var(--gold-light),var(--gold));color:var(--maroon-dark);}
+  .btn-gold:hover{transform:translateY(-2px);box-shadow:0 12px 22px -8px rgba(199,151,46,.6);}
+  .btn-outline{background:transparent;border-color:var(--plum);color:var(--plum);}
+  .btn-outline:hover{background:var(--plum);color:var(--ivory);}
+  .btn-ghost-light{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.55);color:#fff;}
+  .btn-ghost-light:hover{background:rgba(255,255,255,.18);}
+  .btn-sm{padding:9px 18px;font-size:12.5px;}
+  .burger{display:none;flex-direction:column;gap:5px;padding:6px;}
+  .burger span{width:24px;height:2px;background:var(--plum);border-radius:2px;}
+
+  /* SECTIONS */
+  section{padding:100px 0;}
+  .section-head{max-width:640px;margin:0 auto 54px;text-align:center;}
+  .eyebrow{display:inline-block;font-size:12.5px;font-weight:700;letter-spacing:2.5px;color:var(--maroon);margin-bottom:14px;}
+  .section-head h2{font-size:clamp(30px,4vw,44px);}
+  .section-head p{color:var(--muted);margin-top:14px;font-size:16px;}
+
+  /* PAGE HERO */
+  .page-hero{background:radial-gradient(130% 90% at 78% 0%,#5c1029 0%,var(--plum) 55%,#160810 100%);color:#fff;padding:160px 0 80px;text-align:center;position:relative;overflow:hidden;}
+  .page-hero::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 10% 15%,rgba(231,201,120,.16),transparent 42%),radial-gradient(circle at 92% 85%,rgba(122,22,54,.55),transparent 48%);pointer-events:none;}
+  .page-hero .eyebrow{color:var(--gold-light);}
+  .page-hero h1{color:#fff;font-size:clamp(32px,5vw,56px);margin-top:8px;}
+  .page-hero p{color:rgba(255,255,255,.8);max-width:56ch;margin:14px auto 0;font-size:16px;}
+
+  /* VIDEO CAROUSEL */
+  .video-reviews{background:var(--plum);color:#fff;}
+  .video-reviews .section-head h2{color:#fff;}
+  .video-reviews .section-head p{color:rgba(255,255,255,.68);}
+  .video-reviews .eyebrow{color:var(--gold-light);}
+  .carousel-row{display:flex;align-items:center;gap:14px;}
+  .carousel-track{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(230px,1fr);gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;flex:1;scrollbar-width:none;}
+  .carousel-track::-webkit-scrollbar{display:none;}
+  .carousel-btn{width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .25s ease,border-color .25s ease;}
+  .carousel-btn:hover{background:rgba(255,255,255,.1);border-color:var(--gold-light);}
+  .carousel-btn svg{width:16px;height:16px;}
+  .vr-card{scroll-snap-align:start;border-radius:12px;overflow:hidden;position:relative;aspect-ratio:3/4;background:linear-gradient(160deg,#5c1029,#1c0812);border:1px solid rgba(255,255,255,.08);cursor:pointer;}
+  .vr-card video{width:100%;height:100%;object-fit:cover;opacity:.85;}
+  .vr-card .overlay{position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.8),rgba(0,0,0,0) 55%);display:flex;flex-direction:column;justify-content:flex-end;padding:16px;}
+  .vr-card .overlay strong{font-size:14.5px;display:block;color:#fff;}
+  .vr-card .overlay span{font-size:11.5px;color:var(--gold-light);}
+  .vr-card .play-btn{position:absolute;inset:0;margin:auto;width:50px;height:50px;border-radius:50%;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.6);display:flex;align-items:center;justify-content:center;}
+  .vr-card .play-btn svg{width:15px;height:15px;margin-left:2px;}
+
+  /* GALLERY GRID */
+  .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .gallery-card{border-radius:12px;overflow:hidden;aspect-ratio:4/5;position:relative;display:flex;align-items:flex-end;padding:20px;box-shadow:0 14px 30px -22px rgba(42,15,28,.5);}
+  .gallery-card:nth-child(1){background:linear-gradient(155deg,#8a1c3e,#2A0F1C);}
+  .gallery-card:nth-child(2){background:linear-gradient(155deg,#4A0E21,#160810);}
+  .gallery-card:nth-child(3){background:linear-gradient(155deg,#5c1029,#241019);}
+  .gallery-card:nth-child(4){background:linear-gradient(155deg,#3a1535,#1c0812);}
+  .gallery-card:nth-child(5){background:linear-gradient(155deg,#7A1636,#2A0F1C);}
+  .gallery-card:nth-child(6){background:linear-gradient(155deg,#6b1430,#1b1013);}
+  .gallery-card::before{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(15,5,10,.8) 0%,rgba(15,5,10,.1) 60%);}
+  .gallery-card-body{position:relative;z-index:2;color:#fff;}
+  .gallery-card-body .cat-tag{font-size:11px;font-weight:700;letter-spacing:2px;color:var(--gold-light);display:block;margin-bottom:5px;}
+  .gallery-card-body h4{color:#fff;font-size:18px;margin:0;}
+
+  /* BOOKING BAND */
+  .booking{background:linear-gradient(135deg,var(--maroon) 0%,var(--maroon-dark) 60%,var(--plum) 100%);color:#fff;text-align:center;}
+  .booking .section-head h2{color:#fff;}
+  .booking .section-head p{color:rgba(255,255,255,.82);}
+  .booking-actions{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;}
+  .booking-info{display:flex;justify-content:center;gap:44px;margin-top:52px;flex-wrap:wrap;}
+  .booking-info a{display:flex;flex-direction:column;align-items:center;gap:10px;font-size:13.5px;color:rgba(255,255,255,.85);font-weight:600;}
+  .booking-info a svg{width:26px;height:26px;}
+  .booking-info a:hover{color:var(--gold-light);}
+
+  /* LIGHTBOX */
+  .lightbox{position:fixed;inset:0;background:rgba(15,5,10,.9);z-index:1000;display:none;align-items:center;justify-content:center;padding:24px;}
+  .lightbox.open{display:flex;}
+  .lightbox-inner{position:relative;width:100%;max-width:420px;aspect-ratio:9/16;background:#000;border-radius:12px;overflow:hidden;}
+  .lightbox-inner video{width:100%;height:100%;object-fit:cover;}
+  .lightbox-close{position:absolute;top:-44px;right:0;background:none;border:none;color:#fff;font-size:30px;line-height:1;}
+
+  /* FOOTER */
+  footer{background:#180810;color:rgba(255,255,255,.72);padding:70px 0 24px;}
+  .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:40px;padding-bottom:44px;border-bottom:1px solid rgba(255,255,255,.09);}
+  .footer-grid h4{color:#fff;font-size:12.5px;letter-spacing:1.8px;margin-bottom:18px;font-weight:700;}
+  .footer-grid ul{list-style:none;padding:0;display:flex;flex-direction:column;gap:11px;}
+  .footer-grid ul a{font-size:14px;color:rgba(255,255,255,.72);}
+  .footer-grid ul a:hover{color:var(--gold-light);}
+  .footer-brand p{font-size:14px;line-height:1.7;margin-top:14px;max-width:34ch;}
+  .footer-social{display:flex;gap:12px;margin-top:20px;}
+  .footer-social a{width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center;transition:border-color .25s ease,background .25s ease;}
+  .footer-social a:hover{border-color:var(--gold-light);background:rgba(199,151,46,.15);}
+  .footer-social svg{width:17px;height:17px;}
+  .footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:22px;font-size:12.5px;color:rgba(255,255,255,.5);flex-wrap:wrap;gap:10px;}
+  .footer-bottom .links{display:flex;gap:18px;}
+  .float-wa{position:fixed;right:22px;bottom:22px;z-index:150;display:flex;align-items:center;gap:10px;background:#25D366;color:#fff;padding:12px 18px 12px 14px;border-radius:var(--radius-pill);box-shadow:0 10px 26px -8px rgba(0,0,0,.5);font-size:13px;font-weight:700;}
+  .float-wa svg{width:22px;height:22px;fill:#fff;flex-shrink:0;}
+
+  /* RESPONSIVE */
+  /* ========== MOBILE: ≤ 760px ========== */
+  @media (max-width: 760px) {
+    /* NAV */
+    nav.main-links {
+      position: fixed; top: 0; right: 0; height: 100vh; width: 82%; max-width: 320px;
+      background: var(--ivory); flex-direction: column; justify-content: flex-start;
+      align-items: flex-start; gap: 22px; padding: 100px 34px 40px;
+      box-shadow: -20px 0 40px -20px rgba(0,0,0,.3);
+      transform: translateX(100%); transition: transform .35s ease; overflow-y: auto; z-index: 199;
+    }
+    nav.main-links.open { transform: translateX(0); }
+    nav.main-links > a { font-size: 17px; width: 100%; }
+    .header-actions .phone-pill { display: none; }
+    .burger { display: flex; }
+
+    /* HERO (index.html only) */
+    .hero { padding-top: 100px; padding-bottom: 50px; }
+    .hero h1 { font-size: clamp(28px, 9vw, 42px); line-height: 1.12; }
+    .hero p.lead { font-size: 15px; }
+    .hero-cta { flex-direction: column; gap: 12px; }
+    .hero-cta .btn { width: 100%; justify-content: center; font-size: 14px; }
+
+    /* BEFORE/AFTER SLIDER */
+    .ba-wrap { grid-template-columns: 1fr; gap: 28px; margin-top: 36px; }
+    .ba-caption { text-align: center; }
+    .ba-caption .btn { width: 100%; justify-content: center; }
+
+    /* TRUST STRIP */
+    .trust-strip .wrap { gap: 10px; }
+    .trust-strip span { font-size: 11px; letter-spacing: 1.5px; }
+
+    /* PAGE HERO (inner pages) */
+    .page-hero { padding: 120px 0 56px; }
+    .page-hero h1 { font-size: clamp(26px, 8vw, 40px); }
+    .page-hero p { font-size: 14.5px; padding: 0 8px; }
+
+    /* SECTIONS */
+    section { padding: 56px 0; }
+    .section-head { margin-bottom: 36px; padding: 0 8px; }
+    .section-head h2 { font-size: clamp(26px, 7vw, 36px); }
+    .section-head p { font-size: 14.5px; }
+
+    /* SERVICES GRID */
+    .services-grid { grid-template-columns: 1fr; gap: 16px; }
+    .cat-card { aspect-ratio: 5/4; padding: 20px; }
+    .cat-body h3 { font-size: 20px; }
+
+    /* SERVICE DETAIL */
+    .service-detail { padding: 48px 0; }
+    .service-detail-inner { grid-template-columns: 1fr; gap: 28px; }
+    .service-detail-inner.reverse { direction: ltr; }
+    .service-visual { aspect-ratio: 16/9; }
+    .service-content h3 { font-size: clamp(22px, 6vw, 30px); }
+    .service-content p { font-size: 14.5px; }
+    .service-content .service-includes li { font-size: 14px; }
+    .service-content .btn { width: 100%; justify-content: center; margin-top: 20px; }
+
+    /* VIDEO CAROUSEL */
+    .carousel-row { gap: 8px; }
+    .carousel-track { grid-auto-columns: minmax(200px, 260px); gap: 14px; }
+    .carousel-btn { width: 36px; height: 36px; flex-shrink: 0; }
+
+    /* GALLERY GRID */
+    .gallery-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+    .gallery-card { padding: 14px; }
+    .gallery-card-body h4 { font-size: 15px; }
+
+    /* GOOGLE REVIEW TRACK */
+    .g-card { width: 270px; padding: 18px; }
+    .g-card p.quote { font-size: 13px; }
+
+    /* FEATURED REVIEWS */
+    .featured-reviews-grid { grid-template-columns: 1fr; gap: 16px; }
+    .featured-review-card { padding: 22px; }
+    .featured-review-card .quote { font-size: 14px; }
+
+    /* REVIEW CTA */
+    .review-cta { padding: 44px 16px; }
+    .review-cta h3 { font-size: 24px; }
+    .review-cta .btn { width: 100%; justify-content: center; }
+
+    /* CONTACT LAYOUT */
+    .contact-section { padding: 56px 0; }
+    .contact-layout { grid-template-columns: 1fr; gap: 32px; }
+    .contact-card { padding: 18px; gap: 14px; }
+    .contact-card-icon { width: 42px; height: 42px; flex-shrink: 0; }
+    .contact-card-icon svg { width: 18px; height: 18px; }
+    .contact-card-body strong { font-size: 14px; }
+    .contact-card-body span, .contact-card-body a { font-size: 13px; }
+    .contact-form { padding: 24px 18px; border-radius: 12px; }
+    .contact-form h3 { font-size: 24px; margin-bottom: 18px; }
+    .form-group input, .form-group select, .form-group textarea { padding: 12px 14px; font-size: 14px; }
+    .form-submit { font-size: 14px; padding: 14px; }
+
+    /* MAP */
+    .map-section { padding: 0 0 64px; }
+    .map-embed { height: 260px; border-radius: 12px; }
+
+    /* BOOKING BAND */
+    .booking-actions { flex-direction: column; gap: 12px; align-items: center; }
+    .booking-actions .btn { width: 100%; max-width: 320px; justify-content: center; font-size: 14px; }
+    .booking-info { gap: 20px; flex-wrap: wrap; }
+    .booking-info a { font-size: 12.5px; gap: 7px; }
+    .booking-info a svg { width: 22px; height: 22px; }
+
+    /* FOOTER */
+    .footer-grid { grid-template-columns: 1fr; gap: 28px; padding-bottom: 32px; }
+    .footer-grid h4 { margin-bottom: 12px; }
+    .footer-brand p { max-width: 100%; }
+    .footer-bottom { flex-direction: column; text-align: center; gap: 8px; }
+    .footer-bottom .links { justify-content: center; }
+
+    /* FLOATING WA */
+    .float-wa { padding: 14px; right: 16px; bottom: 16px; }
+    .float-wa span { display: none; }
+
+    /* WRAP PADDING */
+    .wrap { padding: 0 16px; }
+
+    /* VIEW ALL / MISC BUTTONS */
+    .view-all-wrap .btn { width: 100%; max-width: 320px; }
+    .review-cta-home { padding: 0 16px 32px; }
+    .review-cta-home .btn { width: 100%; }
+  }
+
+  /* ========== TABLET: 761px – 1024px ========== */
+  @media (min-width: 761px) and (max-width: 1024px) {
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .ba-wrap { grid-template-columns: 1fr; gap: 36px; }
+    .service-detail-inner { gap: 40px; }
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    .featured-reviews-grid { grid-template-columns: 1fr; }
+    .contact-layout { grid-template-columns: 1fr; gap: 40px; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .booking-info { gap: 28px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header id="siteHeader">
+  <div class="wrap nav-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#E7C978" stroke-width="1.4"><path d="M12 2c1.8 2.8 2.8 5 2.8 7a2.8 2.8 0 1 1-5.6 0c0-2 1-4.2 2.8-7Z"/><path d="M12 13v9"/><path d="M8 22h8"/></svg>
+      </span>
+      <span class="logo-text">
+        <span class="lg1">Elite Bridal Studio</span>
+        <span class="lg2">MAKEUP &amp; SKIN CARE</span>
+      </span>
+    </a>
+    <nav class="main-links" id="mainNav">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="our-work.html" style="font-weight:800;color:var(--maroon);">Our Work</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <a class="phone-pill" href="tel:+919944816444">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.99.36 1.96.68 2.9a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.18-1.18a2 2 0 0 1 2.11-.45c.94.32 1.91.55 2.9.68A2 2 0 0 1 22 16.92Z"/></svg>
+        +91 99448 16444
+      </a>
+      <a href="contact.html" class="btn btn-gold">Book Now</a>
+      <button class="burger" id="burgerBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="wrap" style="position:relative;z-index:2;">
+    <span class="eyebrow">IN THEIR OWN WORDS</span>
+    <h1>Our Work &amp; Transformations</h1>
+    <p>Real transformations from real brides — see the artistry behind every look.</p>
+  </div>
+</div>
+
+<!-- VIDEO REVIEWS CAROUSEL -->
+<section class="video-reviews">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">VIDEO REVIEWS</span>
+      <h2>Our video reviews</h2>
+      <p>Real transformations and real words from our brides — tap any card to play.</p>
+    </div>
+    <div class="carousel-row">
+      <button class="carousel-btn" id="vrPrev" aria-label="Scroll left"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <div class="carousel-track" id="vrTrack">
+        <div class="vr-card reveal" data-video="assets/work-bridal-makeup.mp4">
+          <video muted loop playsinline></video>
+          <div class="overlay"><strong>Divya R.</strong><span>Bridal Makeup Client</span></div>
+          <button class="play-btn"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+        </div>
+        <div class="vr-card reveal" data-video="assets/work-saree-draping.mp4">
+          <video muted loop playsinline></video>
+          <div class="overlay"><strong>Meena K.</strong><span>Saree Draping Client</span></div>
+          <button class="play-btn"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+        </div>
+        <div class="vr-card reveal" data-video="assets/work-hair-treatment.mp4">
+          <video muted loop playsinline></video>
+          <div class="overlay"><strong>Ashwini T.</strong><span>Hair Treatment Client</span></div>
+          <button class="play-btn"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+        </div>
+        <div class="vr-card reveal" data-video="assets/work-classic-makeup.mp4">
+          <video muted loop playsinline></video>
+          <div class="overlay"><strong>Priya S.</strong><span>Classic Makeup Client</span></div>
+          <button class="play-btn"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+        </div>
+        <div class="vr-card reveal" data-video="assets/work-workshop.mp4">
+          <video muted loop playsinline></video>
+          <div class="overlay"><strong>Ramya V.</strong><span>Workshop Student</span></div>
+          <button class="play-btn"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+        </div>
+        <div class="vr-card reveal" data-video="assets/work-skin.mp4">
+          <video muted loop playsinline></video>
+          <div class="overlay"><strong>Kavya P.</strong><span>Skin Care Client</span></div>
+          <button class="play-btn"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+        </div>
+      </div>
+      <button class="carousel-btn" id="vrNext" aria-label="Scroll right"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></button>
+    </div>
+  </div>
+</section>
+
+<!-- TRANSFORMATION GALLERY -->
+<section style="background:var(--ivory);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">TRANSFORMATION GALLERY</span>
+      <h2>Every look, crafted with care</h2>
+      <p>A window into the artistry and skill behind every session at Elite Bridal Studio.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-card reveal">
+        <div class="gallery-card-body">
+          <span class="cat-tag">BRIDAL MAKEUP</span>
+          <h4>Wedding Day Glow</h4>
+        </div>
+      </div>
+      <div class="gallery-card reveal">
+        <div class="gallery-card-body">
+          <span class="cat-tag">SAREE DRAPING</span>
+          <h4>Elegant Drape Styles</h4>
+        </div>
+      </div>
+      <div class="gallery-card reveal">
+        <div class="gallery-card-body">
+          <span class="cat-tag">HAIR TREATMENT</span>
+          <h4>Silky Smooth Results</h4>
+        </div>
+      </div>
+      <div class="gallery-card reveal">
+        <div class="gallery-card-body">
+          <span class="cat-tag">CLASSIC MAKEUP</span>
+          <h4>Everyday Elegance</h4>
+        </div>
+      </div>
+      <div class="gallery-card reveal">
+        <div class="gallery-card-body">
+          <span class="cat-tag">WORKSHOP</span>
+          <h4>Training &amp; Mastery</h4>
+        </div>
+      </div>
+      <div class="gallery-card reveal">
+        <div class="gallery-card-body">
+          <span class="cat-tag">SKIN CARE</span>
+          <h4>Clear &amp; Radiant Skin</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING BAND -->
+<section class="booking">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" style="color:var(--gold-light);">BEGIN YOUR TRANSFORMATION</span>
+      <h2>Book your consultation</h2>
+      <p>Take the first step toward your bridal look. Our artists will understand your needs and plan the perfect service for your day.</p>
+    </div>
+    <div class="booking-actions">
+      <a href="tel:+919944816444" class="btn btn-gold">Call +91 99448 16444</a>
+      <a href="https://wa.me/919944816444" target="_blank" rel="noopener" class="btn btn-ghost-light">Chat on WhatsApp</a>
+    </div>
+    <div class="booking-info">
+      <a href="tel:+919944816444">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.99.36 1.96.68 2.9a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.18-1.18a2 2 0 0 1 2.11-.45c.94.32 1.91.55 2.9.68A2 2 0 0 1 22 16.92Z"/></svg>
+        +91 99448 16444
+      </a>
+      <a href="https://www.instagram.com/elitebridalstudio_sugan?stkn=MXRscGNuZjh3YWI5aQ==" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+        @elitebridalstudio_sugan
+      </a>
+      <a href="https://maps.app.goo.gl/oSVs4V9Pi16fDoYx9?g_st=awb" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        Find us on Google Maps
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <span class="logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke="#E7C978" stroke-width="1.4"><path d="M12 2c1.8 2.8 2.8 5 2.8 7a2.8 2.8 0 1 1-5.6 0c0-2 1-4.2 2.8-7Z"/><path d="M12 13v9"/><path d="M8 22h8"/></svg></span>
+          <span class="logo-text"><span class="lg1" style="color:#fff;">Elite Bridal Studio</span><span class="lg2">MAKEUP &amp; SKIN CARE</span></span>
+        </a>
+        <p>Bridal &amp; classic makeup, saree draping, skin and hair treatments — crafted with care in Ooty.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/elitebridalstudio_sugan?stkn=MXRscGNuZjh3YWI5aQ==" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#E7C978" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+          </a>
+          <a href="https://wa.me/919944816444" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#E7C978" stroke-width="1.6"><path d="M21 15a2 2 0 0 1-2 2H8l-4 4V5a2 2 0 0 1 2-2h13a2 2 0 0 1 2 2z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h4>QUICK LINKS</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="our-work.html">Our Work</a></li>
+          <li><a href="reviews.html">Reviews</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>SERVICES</h4>
+        <ul>
+          <li><a href="services.html">Saree Draping</a></li>
+          <li><a href="services.html">Skin Tag &amp; Wart Removal</a></li>
+          <li><a href="services.html">Bridal &amp; Classic Makeup</a></li>
+          <li><a href="services.html">Classes &amp; Workshops</a></li>
+          <li><a href="services.html">Hair Treatment</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>CONTACT INFO</h4>
+        <ul>
+          <li><a href="tel:+919944816444">📞 +91 99448 16444</a></li>
+          <li><a href="https://wa.me/919944816444" target="_blank" rel="noopener">💬 WhatsApp Us</a></li>
+          <li><a href="https://www.instagram.com/elitebridalstudio_sugan?stkn=MXRscGNuZjh3YWI5aQ==" target="_blank" rel="noopener">📸 @elitebridalstudio_sugan</a></li>
+          <li><a href="https://maps.app.goo.gl/oSVs4V9Pi16fDoYx9?g_st=awb" target="_blank" rel="noopener">📍 Find us on Maps</a></li>
+          <li>🕐 Mon–Sun: 9:00 AM – 8:00 PM</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Elite Bridal Studio. All rights reserved.</span>
+      <span class="links"><a href="#">Privacy Policy</a><a href="#">Terms &amp; Conditions</a></span>
+    </div>
+  </div>
+</footer>
+
+<a class="float-wa" href="https://wa.me/919944816444" target="_blank" rel="noopener" aria-label="WhatsApp us">
+  <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.7 14.2c-.2.6-1.2 1.2-1.7 1.3-.5.1-1 .2-3.2-.7-2.7-1.1-4.4-3.9-4.6-4.1-.1-.2-1.1-1.5-1.1-2.8 0-1.3.7-2 .9-2.2.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.4.2.5.7 1.7.7 1.8.1.2.1.3 0 .5-.1.2-.1.3-.3.5-.1.2-.3.4-.4.5-.2.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.5 1.5.3.1.5.1.7-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.2.1 1.5.7 1.7.8.2.1.4.2.5.3.1.2.1.8-.1 1.4Z"/></svg>
+  <span>Chat with us</span>
+</a>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+  <div class="lightbox-inner">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+    <video id="lightboxVideo" controls autoplay playsinline></video>
+  </div>
+</div>
+
+<script>
+  const header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 30));
+  const burger = document.getElementById('burgerBtn');
+  const nav = document.getElementById('mainNav');
+  burger.addEventListener('click', () => nav.classList.toggle('open'));
+  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Carousel
+  const vrTrack = document.getElementById('vrTrack');
+  document.getElementById('vrPrev').addEventListener('click', () => vrTrack.scrollBy({left:-260, behavior:'smooth'}));
+  document.getElementById('vrNext').addEventListener('click', () => vrTrack.scrollBy({left:260, behavior:'smooth'}));
+
+  // Lightbox
+  const lightbox = document.getElementById('lightbox');
+  const lightboxVideo = document.getElementById('lightboxVideo');
+  document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+  document.querySelectorAll('.vr-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const src = card.getAttribute('data-video');
+      lightboxVideo.src = src;
+      lightbox.classList.add('open');
+      lightboxVideo.play().catch(()=>{});
+    });
+  });
+  function closeLightbox(){
+    lightbox.classList.remove('open');
+    lightboxVideo.pause();
+    lightboxVideo.removeAttribute('src');
+  }
+</script>
+</body>
+</html>
