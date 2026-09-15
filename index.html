@@ -68,17 +68,18 @@
 
   /* BEFORE/AFTER SLIDER */
   .ba-wrap{margin-top:60px;display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center;}
-  .ba-slider{position:relative;width:100%;aspect-ratio:4/3;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.16);box-shadow:var(--shadow);user-select:none;}
-  .ba-after,.ba-before{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;flex-direction:column;gap:6px;}
-  .ba-after{background:linear-gradient(150deg,#8a1c3e,#3a0e1f);color:#fff;}
-  .ba-before{background:linear-gradient(150deg,#3a2b30,#1b1013);color:rgba(255,255,255,.75);overflow:hidden;}
+  .ba-slider{position:relative;width:100%;aspect-ratio:3/4;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.2);box-shadow:var(--shadow);user-select:none;background:#1b1013;}
+  .ba-after{position:absolute;inset:0;}
+  .ba-after img{width:100%;height:100%;object-fit:cover;object-position:center 10%;display:block;}
   .ba-before-clip{position:absolute;inset:0;clip-path:inset(0 50% 0 0);transition:clip-path .05s linear;}
-  .ba-label{font-size:11px;font-weight:700;letter-spacing:2px;padding:6px 14px;border-radius:var(--radius-pill);background:rgba(0,0,0,.35);position:absolute;top:14px;}
+  .ba-before{position:absolute;inset:0;}
+  .ba-before img{width:100%;height:100%;object-fit:cover;object-position:center 10%;display:block;}
+  .ba-label{position:absolute;top:14px;font-size:10px;font-weight:700;letter-spacing:2.5px;padding:5px 14px;border-radius:var(--radius-pill);background:rgba(0,0,0,.6);color:#fff;z-index:10;}
   .ba-label.left{left:14px;}
   .ba-label.right{right:14px;}
-  .ba-handle{position:absolute;top:0;bottom:0;left:50%;width:2px;background:#fff;transform:translateX(-1px);cursor:ew-resize;}
-  .ba-handle::after{content:"";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:38px;height:38px;border-radius:50%;background:#fff;box-shadow:0 6px 18px rgba(0,0,0,.4);}
-  .ba-handle::before{content:"⇔";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;font-size:15px;color:var(--maroon-dark);font-weight:700;}
+  .ba-handle{position:absolute;top:0;bottom:0;left:50%;width:2px;background:#fff;transform:translateX(-50%);cursor:ew-resize;z-index:9;}
+  .ba-handle::after{content:"";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:40px;height:40px;border-radius:50%;background:#fff;box-shadow:0 4px 16px rgba(0,0,0,.5);}
+  .ba-handle::before{content:"⇔";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:10;font-size:14px;color:var(--maroon-dark);font-weight:900;line-height:1;}
   .ba-caption h3{color:#fff;font-size:26px;}
   .ba-caption p{color:rgba(255,255,255,.75);margin-top:12px;max-width:38ch;font-size:14.5px;}
   .ba-caption .btn{margin-top:22px;}
@@ -343,7 +344,6 @@
 <section class="hero" id="home">
   <div class="wrap hero-inner">
     <div class="hero-top">
-      <span class="hero-eyebrow"><span class="line"></span>OOTY'S TRUSTED BRIDAL STUDIO</span>
       <h1>Where every bride feels elite</h1>
       <p class="lead">Bridal &amp; classic makeup, saree draping, skin and hair treatments — crafted with precision and care for your most important day. Trusted by brides across the Nilgiris.</p>
       <div class="hero-cta">
@@ -354,22 +354,20 @@
 
     <div class="ba-wrap">
       <div class="ba-slider reveal" id="baSlider">
+        <!-- AFTER — base layer (full frame) -->
         <div class="ba-after">
-          <span class="ba-label right">AFTER</span>
-          <div>
-            <h3 style="color:#fff;font-size:24px;">Bridal Finish</h3>
-            <p style="color:rgba(255,255,255,.75);font-size:13px;margin-top:6px;">Flawless, camera-ready &amp; long-lasting</p>
-          </div>
+          <img src="assets/after.jpg.jpeg" alt="After bridal makeup">
         </div>
+        <!-- BEFORE — clipped layer on top -->
         <div class="ba-before-clip" id="baBeforeClip">
-          <div class="ba-before" style="position:absolute;inset:0;">
-            <span class="ba-label left">BEFORE</span>
-            <div>
-              <h3 style="color:rgba(255,255,255,.8);font-size:24px;">Natural Base</h3>
-              <p style="font-size:13px;margin-top:6px;">Skin prep &amp; consultation</p>
-            </div>
+          <div class="ba-before">
+            <img src="assets/before.jpg.jpeg" alt="Before bridal makeup">
           </div>
         </div>
+        <!-- Labels -->
+        <span class="ba-label left">BEFORE</span>
+        <span class="ba-label right">AFTER</span>
+        <!-- Drag handle -->
         <div class="ba-handle" id="baHandle"></div>
       </div>
       <div class="ba-caption reveal">
@@ -564,14 +562,6 @@
   <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.7 14.2c-.2.6-1.2 1.2-1.7 1.3-.5.1-1 .2-3.2-.7-2.7-1.1-4.4-3.9-4.6-4.1-.1-.2-1.1-1.5-1.1-2.8 0-1.3.7-2 .9-2.2.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.4.2.5.7 1.7.7 1.8.1.2.1.3 0 .5-.1.2-.1.3-.3.5-.1.2-.3.4-.4.5-.2.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.5 1.5.3.1.5.1.7-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.2.1 1.5.7 1.7.8.2.1.4.2.5.3.1.2.1.8-.1 1.4Z"/></svg>
   <span>Chat with us</span>
 </a>
-
-<!-- Lightbox -->
-<div class="lightbox" id="lightbox">
-  <div class="lightbox-inner">
-    <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
-    <video id="lightboxVideo" controls autoplay playsinline></video>
-  </div>
-</div>
 
 <script>
   const header = document.getElementById('siteHeader');
